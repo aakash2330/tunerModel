@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Dashboard } from "@/components/playground";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
             <Dashboard>{children}</Dashboard>
           </div>
         </TooltipProvider>
+        <Toaster />
       </body>
     </html>
   );
