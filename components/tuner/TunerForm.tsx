@@ -25,6 +25,7 @@ import {
 } from "../ui/select";
 import { useState } from "react";
 import { useToast } from "../ui/use-toast";
+import axios from "axios";
 
 const formSchema = z.object({
   max_sale_year: z.number(),
@@ -67,16 +68,12 @@ export default function ProfileForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(values, null, 2)}</code>
-        </pre>
-      ),
-    });
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const response = await axios.post("http://localhost:3001/tuner/data", {
+      values
+    })
+
+    console.log(response);
   }
   return (
     <Form {...form}>
