@@ -43,7 +43,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { DataTableDemo } from "./table/page";
 import { ReactNode } from "react";
 import Link from "next/link";
 
@@ -113,7 +112,7 @@ export function Dashboard({ children }: { children: ReactNode }) {
             </DrawerContent>
           </Drawer>
         </header>
-          <div className="relative justify-center  flex h-full min-h-[50vh] flex-col rounded-xl bg-muted/50 p-4 lg:col-span-3">
+          <div className="relative justify-center  flex h-full min-h-[50vh] flex-col rounded-xl  p-4 lg:col-span-3">
             {children}
           </div>
       </div>
